@@ -1,0 +1,41 @@
+.item {
+    
+    display: flex;
+    margin: 2rem;
+    border-radius: 2rem;
+
+    &_poster {
+        padding-right: 1rem;
+        width: 15%;
+    }
+
+    &_info {
+        
+        padding: 1rem;
+
+        &_title {
+            font-style: oblique;
+            font-size: 3rem;
+        }
+
+        &_overview {
+            font-size: 1rem;
+        }
+
+        &_statistics {
+
+            display: flex;
+            position: relative;
+            bottom: 0px;            
+
+            &_episodes, &_seasons {
+                padding-right: 1rem;
+            }
+
+        }
+
+    }
+
+    box-shadow: 5px 3px 3px 3px rgba(black, 0.3);
+
+}

@@ -1,0 +1,18 @@
+{
+  "123456": { 
+    "category": "tv",
+    "finished": false,
+    "seasons": [
+     {
+       "num": 0,
+       "finished": false,
+       "episodes": [true, true, false, true, false, false, false, true]
+      },
+      {
+        "num": 1,
+        "finished": false,
+        "episodes": [false, true, false, false, false, false, false, false]
+      }
+    ]
+  }
+}

@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Header from "./components/header/Header"
+import Footer from "./components/footer/Footer"
+import Watchlist from "./pages/Watchlist"
+import Details from "./pages/Details"
+import NotFound from "./pages/NotFound";
+import SearchResults from "./pages/SearchResults";
+
+// 112613 - Ranking of Kings, 1429 - Attack on Titan, 31911 - Fullmetal Alchemist: Brotherhood
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' exact element={<Watchlist />} />
+          <Route path='search/:keyword' element={<SearchResults />} />
+          <Route path=':category/:id' element={<Details />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
