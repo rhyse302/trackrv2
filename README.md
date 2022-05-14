@@ -8,7 +8,7 @@
 
 - Badges have been added to display the status of items. This applies to both items on the watchlist and on the details page.
 - Added a max height to the TMBD logo, so it won't scale continuously and fill the page.
-- Deployed with Vercel! [You can visit now!](trackrv2.vercel.app)
+- Deployed with Vercel! [You can visit now!](https://trackrv2.vercel.app)
 
 ---
 
