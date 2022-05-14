@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { HStack, VStack, Heading, Image, Text, useColorModeValue } from '@chakra-ui/react'
+import { HStack, VStack, Heading, Image, Text, useColorModeValue, Badge } from '@chakra-ui/react'
 
 import ListButton from '../listbutton/ListButton'
 import tmdbAPI from '../../api/tmdpApi'
@@ -17,6 +17,7 @@ const ListItem = (props) => {
       let response = null
       const params = {}
       response = await tmdbAPI.detail(props.category, props.id, { params })
+      console.log(response.data)
       setStats(response.data)
 
     }
@@ -31,7 +32,10 @@ const ListItem = (props) => {
       <Image boxSize='400px' objectFit='scale-down' src={apiConfig.w500Image(stats.poster_path || stats.backdrop_path)} alt={stats.name || stats.title} />
       <VStack align='flex-start' width='50%'>
         <HStack width='100%' justifyContent='space-between'>
-          <Link to={'/' + props.category + '/' + stats.id}><Heading textDecoration='underline'>{stats.title || stats.name}</Heading></Link>
+          <HStack>
+            <Link to={'/' + props.category + '/' + stats.id}><Heading textDecoration='underline'>{stats.title || stats.name}</Heading></Link>
+            <Badge>{stats.status}</Badge>
+          </HStack>
           <ListButton id={stats.id} name={stats.name || stats.title} category={props.category} />
         </HStack>
         <Text>{stats.overview}</Text>

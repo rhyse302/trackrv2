@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <Box m={4}>
       <HStack justify='center'>
-        <Image scale='25%' src={logo} alt='TMDB Logo' />
+        <Image scale='25%' maxH={8} src={logo} alt='TMDB Logo' />
         <Text>Streaming information provided by JustWatch.</Text>
         <Text>This product uses the TMDB API but is not endorsed or certified by TMDB.</Text>
       </HStack>

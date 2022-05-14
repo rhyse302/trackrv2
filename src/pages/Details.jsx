@@ -41,7 +41,11 @@ const Details = () => {
 				<Image src={apiConfig.w500Image(details.poster_path || details.background_path)} alt={details.name || details.title} m={4} borderRadius={16} width='30%' />
 				<VStack>
 					<HStack justifyContent='space-between' width='100%' p={4}>
-						<Heading textDecoration='underline'>{details.name || details.title} <Badge colorScheme='blue'>ID: {details.id}</Badge></Heading>
+						<HStack>
+							<Heading textDecoration='underline'>{details.name || details.title}</Heading>
+							<Badge colorScheme='blue'>ID: {details.id}</Badge>
+							<Badge>{details.status}</Badge>
+						</HStack>
 						<ListButton id={details.id} name={details.name || details.title} category={category} />
 					</HStack>
 					<Box px={4}>
