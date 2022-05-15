@@ -9,14 +9,18 @@ import apiConfig from '../api/apiConfig'
 import Episodes from '../components/episodes/Episodes'
 import ListButton from '../components/listbutton/ListButton'
 
+import ListManager from '../scripts/ListManager'
+
 import './details.scss'
 
 const Details = () => {
 
+	console.log(ListManager.getWatchList())
+
 	const { category, id } = useParams()
 
 	const [details, setDetails] = useState([])
-	const [seasonToList, setSeasonToList] = useState(0)
+	const [seasonToList, setSeasonToList] = useState(1)
 
 	useEffect(() => {
 
@@ -25,6 +29,7 @@ const Details = () => {
 			let response = null;
 			const params = {}
 			response = await tmdbAPI.detail(category, id, { params })
+			console.log(response.data.seasons)
 			setDetails(response.data)
 
 		}
@@ -46,7 +51,7 @@ const Details = () => {
 							<Badge colorScheme='blue'>ID: {details.id}</Badge>
 							<Badge>{details.status}</Badge>
 						</HStack>
-						<ListButton id={details.id} name={details.name || details.title} category={category} />
+						<ListButton item={details} />
 					</HStack>
 					<Box px={4}>
 						<Text>{details.overview}</Text>

@@ -4,23 +4,20 @@ import Helmet from 'react-helmet'
 import { Box, Heading, VStack } from '@chakra-ui/react'
 
 import ListItem from '../components/listitem/ListItem'
-import tmdbAPI, { category as cate } from '../api/tmdpApi'
+import tmdbAPI from '../api/tmdpApi'
 
 const SearchResults = () => {
 
   const { keyword } = useParams()
   const [items, setItems] = useState([])
-  console.log(`Keyword: ${keyword}`)
 
   useEffect(() => {
 
     const getResults = async () => {
 
-      let response = null
-      const param = { query: keyword };
-      response = await tmdbAPI.search(cate.tv, { param })
-      console.log(response.data)
-      setItems(response.data)
+      let response = await tmdbAPI.search('multi', { query: keyword })
+      console.log(response.data.results)
+      setItems(response.data.results)
 
     }
 
@@ -40,7 +37,7 @@ const SearchResults = () => {
           <Heading alignSelf='center'>Hmmm, look's like we didn't find anything.</Heading>
         }
         {items && items.map((item, key) => (
-          <ListItem item={item} key={key} />
+          <ListItem id={item.id} category={item.media_type} key={key} />
         ))}
       </VStack>
     </Box>

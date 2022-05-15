@@ -6,7 +6,7 @@ import apiConfig from '../../api/apiConfig'
 
 const Episodes = (props) => {
 
-	const [season, setSeason] = useState(1)
+	const [season, setSeason] = useState({})
 	const color = useColorModeValue('white', 'gray.600')
 
 	useEffect(() => {
@@ -14,6 +14,7 @@ const Episodes = (props) => {
 		const scrape = async () => {
 
 			let response = await tmdbAPI.episodes(props.id, props.season)
+			console.log(response.data)
 			setSeason(response.data)
 
 		}

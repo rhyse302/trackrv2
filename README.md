@@ -2,22 +2,25 @@
 
   Trackr is a time management tool. I found the list of movies and shows I wanted to watch kept growing over the years, and nothing was ever getting checked off. So I decided to do something about it. It started as a spreadsheet, I took all of my movies and shows, their runtimes, and what services they were on and kept an Excel doc. Since I was working and in college, it was a lifesaver being able to say *"This show is only 8 hours long, I can do that."* and then knocking out the larger shows over Christmas break. But maintaining that list eventually became a chore. I found myself annoyed any time something caught my interest, since I'd have to scour for the streaming services and calculate the runtime for another show. So I thought to myself, *"What if I had a tool to do that for me?"* And that is how Trackr was born. I don't just want to give you a tool to help organize your time, but I want to make you feel good for checking things off. For me, this tool is also a great way for me to learn React. But for you, I want this to be a tool that's free, easy, and pleasant to use.
 
+  Trackr has been deployed on Vercel! [You can visit now!](https://trackrv2.vercel.app)
+
 ---
 
 ## What's New?
 
-- Badges have been added to display the status of items. This applies to both items on the watchlist and on the details page.
-- Added a max height to the TMBD logo, so it won't scale continuously and fill the page.
-- Deployed with Vercel! [You can visit now!](https://trackrv2.vercel.app)
+- Search finally works! As of now you can only search TV shows, but fixing that shouldn't be too much work.
+- The ListButton now takes the entire item as a single props argument. This will let me reduce the API calls as I work on a data manager that will handle the watchlist for us.
+- Begun the work on a data manager that will allow me to track every aspect of a show, so we can actually track progress on a multitude of levels.
 
 ---
 
 ## What's Next?
-Well, to be honest, there's a lot I want to do. I'm not sure how much of it is feasible, but there are a few things that I need to do as apposed to what I want to do. Here's a few:
+
+Well, to be honest, there's a lot I want to do. I'm not sure how much of it is feasible, but there are a few things that I need to do as opposed to what I want to do. Here's a few:
 
 - Add runtime calculations
 - Add mobile support
-- Get the search functionality working
+- Add pagination for the search page
 - Write the backend code for progress bars
 - Overhaul the way that data is stored so that things like episodes watched can be tracked
 - Add toasts to celebrate the user accomplishing something

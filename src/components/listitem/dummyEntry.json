@@ -1,18 +1,22 @@
 {
-  "123456": { 
-    "category": "tv",
-    "finished": false,
-    "seasons": [
-     {
-       "num": 0,
-       "finished": false,
-       "episodes": [true, true, false, true, false, false, false, true]
-      },
-      {
-        "num": 1,
-        "finished": false,
-        "episodes": [false, true, false, false, false, false, false, false]
-      }
-    ]
-  }
+  "watchlist": [
+    {
+      "id": 1429,
+      "category": "tv",
+      "finished": false,
+      "watched": 1,
+      "seasons": [
+        {
+          "finished": false,
+          "watched": 1,
+          "episodes": [
+            {
+              "runtime": 24,
+              "watched": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

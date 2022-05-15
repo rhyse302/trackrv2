@@ -27,19 +27,17 @@ const ListItem = (props) => {
   }, [props.id, props.category])
 
   return (
-
-    <HStack width='75%' justify='space-around' align='stretch' shadow={useColorModeValue('xl', '2xl')} p={4} >
+    <HStack w='50%' justify='space-between' align='stretch' shadow={useColorModeValue('xl', '2xl')} p={4}>
       <Image boxSize='400px' objectFit='scale-down' src={apiConfig.w500Image(stats.poster_path || stats.backdrop_path)} alt={stats.name || stats.title} />
-      <VStack align='flex-start' width='50%'>
+      <VStack align='flex-start'>
         <HStack width='100%' justifyContent='space-between'>
           <HStack>
             <Link to={'/' + props.category + '/' + stats.id}><Heading textDecoration='underline'>{stats.title || stats.name}</Heading></Link>
             <Badge>{stats.status}</Badge>
           </HStack>
-          <ListButton id={stats.id} name={stats.name || stats.title} category={props.category} />
+          <ListButton item={stats} />
         </HStack>
         <Text>{stats.overview}</Text>
-        {/*TODO: Once we start taking in the category, throw these into conditional rendering. Since we only need them if it's a TV show.*/}
         {props.category === 'tv' &&
           <HStack>
             <Text>{stats.number_of_seasons} {stats.number_of_seasons > 1 ? 'Seasons' : 'Season'}</Text>

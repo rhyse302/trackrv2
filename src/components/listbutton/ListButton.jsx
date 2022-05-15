@@ -5,15 +5,16 @@ import { BsBookmark, BsBookmarkFill } from 'react-icons/bs'
 
 const ListButton = (props) => {
 
-  const [onList, setOnList] = useState(localStorage.getItem(props.id) ? true : false)
+  const [onList, setOnList] = useState(localStorage.getItem(props.item.id) ? true : false)
+
   const toast = useToast()
 
   //When the page is first rendered, see if the element is on the list
   useEffect(() => {
 
-    setOnList(localStorage.getItem(props.id) !== null)
+    setOnList(localStorage.getItem(props.item.id) !== null)
 
-  }, [props.id])
+  }, [props.item.id])
 
   //Put on the watchlist and commit to local storage, otherwise remove from the watchlist and delete from local storage
   const listManage = () => {
@@ -21,14 +22,14 @@ const ListButton = (props) => {
     if (!onList) {
       toast({
         title: 'Item added',
-        description: `${props.name} has been successfully added to your watchlist.`,
+        description: `${props.item.name || props.item.title} has been successfully added to your watchlist.`,
         status: 'success',
       })
       localStorage.setItem(JSON.stringify(props.id), JSON.stringify(props.category))
     } else {
       toast({
         title: 'Item removed',
-        description: `${props.name} has been successfully removed from your watchlist.`,
+        description: `${props.item.name || props.item.title} has been successfully removed from your watchlist.`,
         status: 'error'
       })
       localStorage.removeItem(JSON.stringify(props.id))
