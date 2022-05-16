@@ -20,7 +20,7 @@ const Details = () => {
 	const { category, id } = useParams()
 
 	const [details, setDetails] = useState([])
-	const [seasonToList, setSeasonToList] = useState(1)
+	const [seasonToList, setSeasonToList] = useState()
 
 	useEffect(() => {
 

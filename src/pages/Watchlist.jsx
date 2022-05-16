@@ -16,7 +16,6 @@ const Watchlist = () => {
 
 			const key = localStorage.key(i)
 			if (key !== 'chakra-ui-color-mode') {
-				console.log(key, JSON.parse(localStorage.getItem(key)))
 				entries.push({ id: key, category: JSON.parse(localStorage.getItem(key)) })
 			}
 		}

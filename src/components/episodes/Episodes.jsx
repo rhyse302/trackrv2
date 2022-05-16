@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Grid, Image, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Grid, Heading, Image, Text, useColorModeValue } from '@chakra-ui/react'
 
 import tmdbAPI from '../../api/tmdpApi'
 import apiConfig from '../../api/apiConfig'
@@ -25,6 +25,7 @@ const Episodes = (props) => {
 
 	return (
 		<Box align='center' justifyContent='center' mx={4}>
+			<Heading as='h2' mb={4} textDecoration='underline'>{season.name} | {season.episodes && season.episodes.length} Episodes</Heading>
 			<Grid templateColumns='repeat(4, 1fr)' gap={5}>
 				{season.episodes && season.episodes.map((item, num) => (
 					<Box w='500px' borderRadius={4} bg={color} borderWidth={4} borderColor='black' key={num}>

@@ -6,6 +6,7 @@ import { BsBookmark, BsBookmarkFill } from 'react-icons/bs'
 const ListButton = (props) => {
 
   const [onList, setOnList] = useState(localStorage.getItem(props.item.id) ? true : false)
+  console.log(props.item)
 
   const toast = useToast()
 
@@ -25,14 +26,14 @@ const ListButton = (props) => {
         description: `${props.item.name || props.item.title} has been successfully added to your watchlist.`,
         status: 'success',
       })
-      localStorage.setItem(JSON.stringify(props.id), JSON.stringify(props.category))
+      localStorage.setItem(JSON.stringify(props.item.id), JSON.stringify(props.item.name ? 'tv' : 'movie'))
     } else {
       toast({
         title: 'Item removed',
         description: `${props.item.name || props.item.title} has been successfully removed from your watchlist.`,
         status: 'error'
       })
-      localStorage.removeItem(JSON.stringify(props.id))
+      localStorage.removeItem(JSON.stringify(props.item.id))
     }
 
     setOnList(!onList)
