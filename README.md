@@ -1,16 +1,24 @@
 # What is Trackr?
 
-  Trackr is a time management tool. I found the list of movies and shows I wanted to watch kept growing over the years, and nothing was ever getting checked off. So I decided to do something about it. It started as a spreadsheet, I took all of my movies and shows, their runtimes, and what services they were on and kept an Excel doc. Since I was working and in college, it was a lifesaver being able to say *"This show is only 8 hours long, I can do that."* and then knocking out the larger shows over Christmas break. But maintaining that list eventually became a chore. I found myself annoyed any time something caught my interest, since I'd have to scour for the streaming services and calculate the runtime for another show. So I thought to myself, *"What if I had a tool to do that for me?"* And that is how Trackr was born. I don't just want to give you a tool to help organize your time, but I want to make you feel good for checking things off. For me, this tool is also a great way for me to learn React. But for you, I want this to be a tool that's free, easy, and pleasant to use.
+  Trackr is a time management tool. I found the list of movies and shows I wanted to watch kept growing over the years, and nothing was ever getting checked off. So I decided to do something about it. It started as a spreadsheet, I took all of my movies and shows, their runtimes, and what services they were on and kept an Excel doc. Since I was working and in college, it was a lifesaver being able to say *"This show is only 8 hours long, I can do that."* and then knocking out the larger shows over Christmas break. But maintaining that list eventually became a chore. I found myself annoyed any time something caught my interest, since I'd have to scour for the streaming services and calculate the runtime for another show. So I thought to myself, *"What if I had a tool to do that for me?"* And that is how Trackr was born. I don't just want to give you a tool to help organize your time, but I want to make you feel good for checking things off. For me, this tool is also a great way for me to learn React. But for you, I want this to be a tool that's free, convenient, and easy to use.
 
   Trackr has been deployed on Vercel! [You can visit now!](https://trackrv2.vercel.app)
 
+NOTE: After doing some digging on the abnormal behavior of shows (Season 0 of everything, and many seasons of Judge Judy having 0 episodes) I have determined this to be an issue with TMDB API, and not an issue with Trackr, as frustrating as that is since it means I cannot fix it.
+
 ---
 
-## What's New?
+## Big Update!
 
-- Search finally works! As of now you can only search TV shows, but fixing that shouldn't be too much work.
-- The ListButton now takes the entire item as a single props argument. This will let me reduce the API calls as I work on a data manager that will handle the watchlist for us.
-- Begun the work on a data manager that will allow me to track every aspect of a show, so we can actually track progress on a multitude of levels.
+### What's New?
+
+- Whole new data structure! A lot more information is being stored and processed, so I know have the resources available to begin doing things like runtime calculations and progress bars. (To see for yourself, there are 2 JSON files in the *'scripts'* directory. **dummyEntry** is the original concept I typed up as a reference, and **sampleData** is actual data pulled from a more refined version of that implementation.)
+- Migrated EVERYTHING to use the new data structure! (ListButtons, WatchList, etc.)
+- Progress bars will now only appear if the media in question is a show AND the show is on your watchlist.
+- Progress bars work now! At the moment, you will have to refresh the page for the progress bar to update, though this will (hopefully) be fixed later. (NOTE: The progress bar on the watchlist page is still a dummy.)
+- If a show is on your watchlist, episodes will have a checkbox to mark as watched.
+- When an episode is marked as watched, the still image will fade a little.
+- Fixed a bug with season selection, now they will be listed properly. (NOTE: Selecting Specials (Season 0) still returns nothing.)
 
 ---
 
@@ -19,10 +27,9 @@
 Well, to be honest, there's a lot I want to do. I'm not sure how much of it is feasible, but there are a few things that I need to do as opposed to what I want to do. Here's a few:
 
 - Add runtime calculations
+- Include screenshots and documentation on how to use the tool
 - Add mobile support
 - Add pagination for the search page
-- Write the backend code for progress bars
-- Overhaul the way that data is stored so that things like episodes watched can be tracked
 - Add toasts to celebrate the user accomplishing something
 
 ---

@@ -17,7 +17,6 @@ const ListItem = (props) => {
       let response = null
       const params = {}
       response = await tmdbAPI.detail(props.category, props.id, { params })
-      console.log(response.data)
       setStats(response.data)
 
     }

@@ -1,0 +1,656 @@
+{
+  "watchlist": {
+    "1429": {
+      "category": "tv",
+      "finished": false,
+      "total_runtime": 2944,
+      "watched": 0,
+      "seasons": [
+        {
+          "number": 0,
+          "season_name": "Specials",
+          "finished": false,
+          "episodes": [
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": null
+            },
+            {
+              "watched": false,
+              "runtime": null
+            }
+          ]
+        },
+        {
+          "number": 1,
+          "season_name": "Season 1",
+          "finished": false,
+          "episodes": [
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "season_name": "Season 2",
+          "finished": false,
+          "episodes": [
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "season_name": "Season 3",
+          "finished": false,
+          "episodes": [
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            },
+            {
+              "watched": false,
+              "runtime": 25
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "season_name": "The Final Season",
+          "finished": false,
+          "episodes": [
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            },
+            {
+              "watched": false,
+              "runtime": 23
+            }
+          ]
+        }
+      ]
+    },
+    "120089": {
+      "category": "tv",
+      "finished": false,
+      "total_runtime": 600,
+      "watched": 0,
+      "seasons": [
+        {
+          "number": 1,
+          "season_name": "Season 1",
+          "finished": false,
+          "episodes": [
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            },
+            {
+              "watched": false,
+              "runtime": 24
+            }
+          ]
+        }
+      ]
+    },
+    "652837": {
+      "id": 652837,
+      "category": "movie",
+      "finished": false,
+      "runtime": 98
+    }
+  }
+}

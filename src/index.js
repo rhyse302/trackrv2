@@ -8,11 +8,10 @@ import App from './App';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
+//If for some reason there are any more issues, wrap this in a React.StrictMode element
 root.render(
-  <React.StrictMode>
     <ChakraProvider>
       <ColorModeScript initialColorMode={theme.config.initialColorMode='system'} />
       <App />
     </ChakraProvider>
-  </React.StrictMode>
 );

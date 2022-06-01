@@ -8,19 +8,17 @@ import tmdbAPI from '../api/tmdpApi'
 import apiConfig from '../api/apiConfig'
 import Episodes from '../components/episodes/Episodes'
 import ListButton from '../components/listbutton/ListButton'
-
-import ListManager from '../scripts/ListManager'
+import { isOnList, getTimes } from '../scripts/ListManager'
 
 import './details.scss'
 
 const Details = () => {
 
-	console.log(ListManager.getWatchList())
-
 	const { category, id } = useParams()
 
 	const [details, setDetails] = useState([])
 	const [seasonToList, setSeasonToList] = useState()
+	const [times, setTimes] = useState([])
 
 	useEffect(() => {
 
@@ -29,8 +27,11 @@ const Details = () => {
 			let response = null;
 			const params = {}
 			response = await tmdbAPI.detail(category, id, { params })
-			console.log(response.data.seasons)
 			setDetails(response.data)
+
+			if (isOnList(response.data.id)) {
+				setTimes(getTimes(response.data.id))
+			}
 
 		}
 
@@ -41,7 +42,7 @@ const Details = () => {
 	return (
 		<Box>
 			<Helmet><title>{details.name || details.title}</title></Helmet>
-			{category === 'tv' && <Progress mx={4} borderRadius={4} value={56} hasStripe={true} />}
+			{category === 'tv' && isOnList(details.id) && <Progress mx={4} borderRadius={4} value={(times[0] / times[1]) * 100} hasStripe={true} />}
 			<div className="detailitem">
 				<Image src={apiConfig.w500Image(details.poster_path || details.background_path)} alt={details.name || details.title} m={4} borderRadius={16} width='30%' />
 				<VStack>
@@ -56,6 +57,7 @@ const Details = () => {
 					<Box px={4}>
 						<Text>{details.overview}</Text>
 						{category === 'tv' && <Text>{details.number_of_seasons} {details.number_of_seasons > 1 ? 'Seasons' : 'Season'} | {details.number_of_episodes} Episodes</Text>}
+						{category === 'tv' && isOnList(details.id) && <Text>{times[0]} minutes watched | {times[1] - times[0]} minutes remaining</Text>}
 					</Box>
 				</VStack>
 			</div>
@@ -67,7 +69,7 @@ const Details = () => {
 						<MenuButton ml={4} mb={4} as={Button} rightIcon={<ChevronDownIcon />}>Seasons</MenuButton>
 						<MenuList>
 							{details.seasons && details.seasons.map((season, num) => (
-								<MenuItem onClick={() => setSeasonToList(num)} key={num}>{season.name}</MenuItem>
+								<MenuItem onClick={() => setSeasonToList(season.season_number)} key={num}>{season.name}</MenuItem>
 							))}
 						</MenuList>
 					</Menu>

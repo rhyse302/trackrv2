@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import { Box, Heading, VStack, Progress } from '@chakra-ui/react'
 
 import ListItem from '../components/listitem/ListItem'
+import { getWatchList } from '../scripts/ListManager'
 
 const Watchlist = () => {
 
@@ -12,16 +13,10 @@ const Watchlist = () => {
 
 		let entries = []
 
-		for (let i = 0; i < localStorage.length; i++) {
-
-			const key = localStorage.key(i)
-			if (key !== 'chakra-ui-color-mode') {
-				entries.push({ id: key, category: JSON.parse(localStorage.getItem(key)) })
-			}
-		}
+		//For every item in the list, push an array of the id and category so that we can map those to our ListItems
+		for (const [key, value] of Object.entries(getWatchList())) { entries.push([key, value.category]) }
 
 		setItems(entries)
-		console.log(items)
 
 		// eslint-disable-next-line
 	}, [items.length])
@@ -38,7 +33,7 @@ const Watchlist = () => {
 					<Heading alignSelf='center' size='md'>Looks like you don't have anything on your watchlist. Use the search bar to get started</Heading>
 				}
 				{items && items.map((item, key) => (
-					<ListItem id={item.id} category={item.category} key={key} />
+					<ListItem id={item[0]} category={item[1]} key={key} />
 				))}
 			</VStack>
 		</Box>

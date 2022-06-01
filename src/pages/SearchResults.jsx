@@ -16,7 +16,6 @@ const SearchResults = () => {
     const getResults = async () => {
 
       let response = await tmdbAPI.search('multi', { query: keyword })
-      console.log(response.data.results)
       setItems(response.data.results)
 
     }

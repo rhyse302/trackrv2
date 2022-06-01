@@ -8,7 +8,7 @@ const NotFound = () => {
     <Box>
       <Helmet><title>404 | Page not found!</title></Helmet>
       <Heading align='center'>404 | Page not found!</Heading>
-      <Text align='center'>The page you're looking for does not exist. If you continue to encounter this error, please submit a bug report.</Text>
+      <Text align='center'>The page you're looking for does not exist.</Text>
     </Box>
   )
 }
