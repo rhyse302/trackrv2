@@ -8,17 +8,10 @@ NOTE: After doing some digging on the abnormal behavior of shows (Season 0 of ev
 
 ---
 
-## Big Update!
+## What's New?
 
-### What's New?
-
-- Whole new data structure! A lot more information is being stored and processed, so I know have the resources available to begin doing things like runtime calculations and progress bars. (To see for yourself, there are 2 JSON files in the *'scripts'* directory. **dummyEntry** is the original concept I typed up as a reference, and **sampleData** is actual data pulled from a more refined version of that implementation.)
-- Migrated EVERYTHING to use the new data structure! (ListButtons, WatchList, etc.)
-- Progress bars will now only appear if the media in question is a show AND the show is on your watchlist.
-- Progress bars work now! At the moment, you will have to refresh the page for the progress bar to update, though this will (hopefully) be fixed later. (NOTE: The progress bar on the watchlist page is still a dummy.)
-- If a show is on your watchlist, episodes will have a checkbox to mark as watched.
-- When an episode is marked as watched, the still image will fade a little.
-- Fixed a bug with season selection, now they will be listed properly. (NOTE: Selecting Specials (Season 0) still returns nothing.)
+- Added some polish, episode checkboxes now change value based on if they are checked or not.
+- Created a workaround for the Season 0 issue, so now all shows should have their Specials visible.
 
 ---
 
@@ -26,6 +19,7 @@ NOTE: After doing some digging on the abnormal behavior of shows (Season 0 of ev
 
 Well, to be honest, there's a lot I want to do. I'm not sure how much of it is feasible, but there are a few things that I need to do as opposed to what I want to do. Here's a few:
 
+- Consider removing Season 0 entirely, thus avoiding the need for workarounds and preventing it from skewing runtimes and progress bars
 - Add runtime calculations
 - Include screenshots and documentation on how to use the tool
 - Add mobile support

@@ -16,28 +16,32 @@ const Details = () => {
 
 	const { category, id } = useParams()
 
-	const [details, setDetails] = useState([])
-	const [seasonToList, setSeasonToList] = useState()
+	const [details, setDetails] = useState({})
+	const [seasonToList, setSeason] = useState()
 	const [times, setTimes] = useState([])
 
 	useEffect(() => {
 
 		const scrape = async () => {
 
-			let response = null;
 			const params = {}
-			response = await tmdbAPI.detail(category, id, { params })
+			let response = await tmdbAPI.detail(category, id, { params })
+			console.log(response.data.seasons)
 			setDetails(response.data)
+			console.log(await tmdbAPI.episodes(id, 0))
 
-			if (isOnList(response.data.id)) {
-				setTimes(getTimes(response.data.id))
-			}
+			if (isOnList(response.data.id)) { setTimes(getTimes(response.data.id)) }
 
 		}
 
 		scrape()
 
 	}, [category, id])
+
+	const setSeasonToList = (num) => {
+		console.log(num)
+		setSeason(num === 0 ? 100 : num)
+	}
 
 	return (
 		<Box>
@@ -69,7 +73,7 @@ const Details = () => {
 						<MenuButton ml={4} mb={4} as={Button} rightIcon={<ChevronDownIcon />}>Seasons</MenuButton>
 						<MenuList>
 							{details.seasons && details.seasons.map((season, num) => (
-								<MenuItem onClick={() => setSeasonToList(season.season_number)} key={num}>{season.name}</MenuItem>
+								/*season.season_number !== 0 && */<MenuItem onClick={() => setSeasonToList(num)} key={num}>{season.name}</MenuItem>
 							))}
 						</MenuList>
 					</Menu>

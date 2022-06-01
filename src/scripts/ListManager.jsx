@@ -3,7 +3,6 @@ import tmdbAPI from '../api/tmdpApi'
 //Big boy, adding a movie is simple, but it's the TV shows where this new structure really shines
 export async function addListItem(data) {
 
-  //DO NOT ADD IF IT'S ALREADY ON THE LIST
   if (isOnList(data.id)) {
 
     console.error("Cannot add", data.id, "- already on list")
