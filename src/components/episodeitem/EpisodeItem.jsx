@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Image, Checkbox, Text, useColorModeValue } from '@chakra-ui/react'
 import { isEpisodeWatched, markEpisode } from '../../scripts/ListManager'
 import apiConfig from '../../api/apiConfig'
+import placeholder from '../../res/NotFoundEpisode.png'
 
 const EpisodeItem = (props) => {
 
@@ -28,7 +29,7 @@ const EpisodeItem = (props) => {
 
   return (
     <Box w='500px' minH='281px' borderRadius={4} bg={color} borderWidth={4} borderColor='black'>
-      <Image src={apiConfig.w500Image(props.item.still_path)} alt={props.item.name} bgClip='border-box' opacity={watched ? '75%' : '100%'} />
+      <Image src={props.item.still_path !== null ? apiConfig.w500Image(props.item.still_path) : placeholder} alt={props.item.name} bgClip='border-box' opacity={watched ? '75%' : '100%'} />
       {props.onList && <Checkbox isChecked={watched} onChange={(e) => { toggleEpisode(e.target.checked) }}>{watched ? 'Watched!' : 'Mark Watched'}</Checkbox>}
       <Text>{props.item.episode_number}: {props.item.name}</Text>
       <Text>{props.item.runtime} minutes</Text>

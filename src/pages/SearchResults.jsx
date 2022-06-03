@@ -32,7 +32,7 @@ const SearchResults = () => {
       {/* In case I want to add the divider back divider={<StackDivider alignSelf='center' borderWidth={1} stroke={4} width='50%'/>} */}
       <VStack gap={4}>
         <Heading mt={4} alignSelf='center'>Results for '{keyword}'</Heading>
-        {(!items || items.length === 0) &&
+        {items.length === 0 &&
           <Heading alignSelf='center'>Hmmm, look's like we didn't find anything.</Heading>
         }
         {items && items.map((item, key) => (

@@ -10,8 +10,10 @@ NOTE: After doing some digging on the abnormal behavior of shows (Season 0 of ev
 
 ## What's New?
 
-- Added some polish, episode checkboxes now change value based on if they are checked or not.
-- Created a workaround for the Season 0 issue, so now all shows should have their Specials visible.
+- Completely fixed the Season 0 issue, no workaround needed.
+- Home icon now changes based on the color mode for more consistency with the rest of the header.
+- Added placeholder images on list items, episode items, and the Details page that will load if the image either failed to retrieve or one does not exist.
+- Added some (very) primitive responsiveness to the watchlist, just to play around with how I want to go about implementing a responsive UI.
 
 ---
 

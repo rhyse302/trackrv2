@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Box, HStack, Input, InputLeftElement, InputGroup, IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { MoonIcon, SearchIcon, SunIcon } from '@chakra-ui/icons'
-import { BsHouse } from 'react-icons/bs'
+import { BsHouse, BsHouseFill } from 'react-icons/bs'
 
 const Header = () => {
 
@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <Box>
       <HStack m={4}>
-        <Link to='/'><IconButton icon={<BsHouse />} shadow={useColorModeValue('md', 'dark-lg')} /></Link>
+        <Link to='/'><IconButton icon={useColorModeValue(<BsHouse />, <BsHouseFill />)} shadow={useColorModeValue('md', 'dark-lg')} /></Link>
         <InputGroup shadow={useColorModeValue('md', 'dark-lg')}>
           <InputLeftElement children={<SearchIcon />} />
           <Input variant='filled' placeholder='Search here' onChange={(event) => setQuery(event.target.value)} />

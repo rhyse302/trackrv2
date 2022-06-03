@@ -9,6 +9,7 @@ import apiConfig from '../api/apiConfig'
 import Episodes from '../components/episodes/Episodes'
 import ListButton from '../components/listbutton/ListButton'
 import { isOnList, getTimes } from '../scripts/ListManager'
+import placeholder from '../res/NotFoundPoster.png'
 
 import './details.scss'
 
@@ -26,29 +27,21 @@ const Details = () => {
 
 			const params = {}
 			let response = await tmdbAPI.detail(category, id, { params })
-			console.log(response.data.seasons)
 			setDetails(response.data)
-			console.log(await tmdbAPI.episodes(id, 0))
 
-			if (isOnList(response.data.id)) { setTimes(getTimes(response.data.id)) }
-
+			if (isOnList(response.data.id) && category === 'tv') { setTimes(getTimes(response.data.id)) }
 		}
 
 		scrape()
 
 	}, [category, id])
 
-	const setSeasonToList = (num) => {
-		console.log(num)
-		setSeason(num === 0 ? 100 : num)
-	}
-
 	return (
 		<Box>
 			<Helmet><title>{details.name || details.title}</title></Helmet>
 			{category === 'tv' && isOnList(details.id) && <Progress mx={4} borderRadius={4} value={(times[0] / times[1]) * 100} hasStripe={true} />}
 			<div className="detailitem">
-				<Image src={apiConfig.w500Image(details.poster_path || details.background_path)} alt={details.name || details.title} m={4} borderRadius={16} width='30%' />
+				<Image src={(details.poster_path !== null || details.poster_path !== null) ? apiConfig.w500Image(details.poster_path || details.poster_path) : placeholder} alt={details.name || details.title} m={4} borderRadius={16} width='30%' />
 				<VStack>
 					<HStack justifyContent='space-between' width='100%' p={4}>
 						<HStack>
@@ -73,11 +66,11 @@ const Details = () => {
 						<MenuButton ml={4} mb={4} as={Button} rightIcon={<ChevronDownIcon />}>Seasons</MenuButton>
 						<MenuList>
 							{details.seasons && details.seasons.map((season, num) => (
-								/*season.season_number !== 0 && */<MenuItem onClick={() => setSeasonToList(num)} key={num}>{season.name}</MenuItem>
+								<MenuItem onClick={() => setSeason(season.season_number)} key={num}>{season.name}</MenuItem>
 							))}
 						</MenuList>
 					</Menu>
-					{seasonToList && <Episodes id={id} season={seasonToList} />}
+					{seasonToList !== null && <Episodes id={id} season={seasonToList} />}
 				</Box>
 			}
 		</Box>

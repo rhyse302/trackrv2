@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { HStack, VStack, Heading, Image, Text, useColorModeValue, Badge } from '@chakra-ui/react'
+import { HStack, VStack, Heading, Flex, Image, Text, useColorModeValue, Badge } from '@chakra-ui/react'
 
 import ListButton from '../listbutton/ListButton'
 import tmdbAPI from '../../api/tmdpApi'
 import apiConfig from '../../api/apiConfig'
+import placeholder from '../../res/NotFoundPoster.png'
 
 const ListItem = (props) => {
 
   const [stats, setStats] = useState([])
+  const imagePath = stats.poster_path !== null ? stats.poster_path : stats.backdrop_path
 
   useEffect(() => {
 
@@ -26,8 +28,8 @@ const ListItem = (props) => {
   }, [props.id, props.category])
 
   return (
-    <HStack w='50%' justify='space-between' align='stretch' shadow={useColorModeValue('xl', '2xl')} p={4}>
-      <Image boxSize='400px' objectFit='scale-down' src={apiConfig.w500Image(stats.poster_path || stats.backdrop_path)} alt={stats.name || stats.title} />
+    <Flex w='75%' justify='space-between' align='stretch' shadow={useColorModeValue('xl', '2xl')} p={4} flexDirection={{ base: 'column', md: 'row' }}>
+      <Image boxSize='400px' mr={4} objectFit='scale-down' src={imagePath !== null ? apiConfig.w500Image(imagePath) : placeholder} alt={stats.name || stats.title} />
       <VStack align='flex-start'>
         <HStack width='100%' justifyContent='space-between'>
           <HStack>
@@ -44,7 +46,7 @@ const ListItem = (props) => {
           </HStack>
         }
       </VStack>
-    </HStack >
+    </Flex >
   )
 }
 
