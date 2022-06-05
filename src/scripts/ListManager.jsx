@@ -25,26 +25,28 @@ export async function addListItem(data) {
 
       for (const item of data.seasons) { //Can't use a foreach, since the await will give the website an anyeurism
 
-        let episodes = []
-        let episodeData = await getEpisodes(data.id, item.season_number)
-        // eslint-disable-next-line
-        episodeData.episodes.forEach((episode) => {
-          totalTime += episode.runtime
-          episodes.push({
-            "watched": false,
-            "runtime": episode.runtime
+        if (item.season_number !== 0) {
+          let episodes = []
+          let episodeData = await getEpisodes(data.id, item.season_number)
+          // eslint-disable-next-line
+          episodeData.episodes.forEach((episode) => {
+            totalTime += episode.runtime
+            episodes.push({
+              "watched": false,
+              "runtime": episode.runtime
+            })
           })
-        })
 
-        //Create a season item
-        const season = {
-          "number": item.season_number,
-          "season_name": item.name,
-          "finished": false,
-          "episodes": episodes
+          //Create a season item
+          const season = {
+            "number": item.season_number,
+            "season_name": item.name,
+            "finished": false,
+            "episodes": episodes
+          }
+
+          seasons.push(season)
         }
-
-        seasons.push(season)
       }
 
       //Compile everything into an entry

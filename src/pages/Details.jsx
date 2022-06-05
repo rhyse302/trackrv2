@@ -11,14 +11,12 @@ import ListButton from '../components/listbutton/ListButton'
 import { isOnList, getTimes } from '../scripts/ListManager'
 import placeholder from '../res/NotFoundPoster.png'
 
-import './details.scss'
-
 const Details = () => {
 
 	const { category, id } = useParams()
 
 	const [details, setDetails] = useState({})
-	const [seasonToList, setSeason] = useState()
+	const [seasonToList, setSeason] = useState(1)
 	const [times, setTimes] = useState([])
 
 	useEffect(() => {
@@ -39,9 +37,9 @@ const Details = () => {
 	return (
 		<Box>
 			<Helmet><title>{details.name || details.title}</title></Helmet>
-			{category === 'tv' && isOnList(details.id) && <Progress mx={4} borderRadius={4} value={(times[0] / times[1]) * 100} hasStripe={true} />}
-			<div className="detailitem">
-				<Image src={(details.poster_path !== null || details.poster_path !== null) ? apiConfig.w500Image(details.poster_path || details.poster_path) : placeholder} alt={details.name || details.title} m={4} borderRadius={16} width='30%' />
+			{category === 'tv' && isOnList(details.id) && <Progress mx={4} borderRadius={4} value={(times[0] / times[1]) * 100} hasStripe isAnimated />}
+			<HStack align='flex-start'>
+				<Image src={(details.poster_path !== null || details.poster_path !== null) ? apiConfig.w500Image(details.poster_path || details.poster_path) : placeholder} alt={details.name || details.title} my={4} ml={4} borderRadius='2xl' width='20%' />
 				<VStack>
 					<HStack justifyContent='space-between' width='100%' p={4}>
 						<HStack>
@@ -52,12 +50,12 @@ const Details = () => {
 						<ListButton item={details} />
 					</HStack>
 					<Box px={4}>
-						<Text>{details.overview}</Text>
+						<Text fontSize='lg'>{details.overview}</Text>
 						{category === 'tv' && <Text>{details.number_of_seasons} {details.number_of_seasons > 1 ? 'Seasons' : 'Season'} | {details.number_of_episodes} Episodes</Text>}
 						{category === 'tv' && isOnList(details.id) && <Text>{times[0]} minutes watched | {times[1] - times[0]} minutes remaining</Text>}
 					</Box>
 				</VStack>
-			</div>
+			</HStack>
 
 			{/* Is this a show? If it is, render the season selector and episodes */}
 			{category === 'tv' &&
@@ -66,7 +64,7 @@ const Details = () => {
 						<MenuButton ml={4} mb={4} as={Button} rightIcon={<ChevronDownIcon />}>Seasons</MenuButton>
 						<MenuList>
 							{details.seasons && details.seasons.map((season, num) => (
-								<MenuItem onClick={() => setSeason(season.season_number)} key={num}>{season.name}</MenuItem>
+								season.season_number !== 0 && <MenuItem onClick={() => setSeason(season.season_number)} key={num}>{season.name}</MenuItem>
 							))}
 						</MenuList>
 					</Menu>

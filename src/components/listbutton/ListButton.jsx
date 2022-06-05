@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { addListItem, isOnList, removeItem } from '../../scripts/ListManager'
 
-import { IconButton, useToast } from '@chakra-ui/react'
+import { IconButton, Tooltip, useToast } from '@chakra-ui/react'
 import { BsBookmark, BsBookmarkFill } from 'react-icons/bs'
 
 const ListButton = (props) => {
@@ -43,7 +43,11 @@ const ListButton = (props) => {
   }
 
   return (
-    <IconButton onClick={() => listManage()} icon={onList ? <BsBookmarkFill /> : <BsBookmark />} />
+
+    <Tooltip label={onList ? 'Remove from watchlist' : 'Add to watchlist'} placement='auto' openDelay={750} closeDelay={250} hasArrow>
+      <IconButton onClick={() => listManage()} icon={onList ? <BsBookmarkFill /> : <BsBookmark />} />
+    </Tooltip>
+
   )
 }
 

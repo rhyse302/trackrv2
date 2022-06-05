@@ -10,10 +10,16 @@ NOTE: After doing some digging on the abnormal behavior of shows (Season 0 of ev
 
 ## What's New?
 
-- Completely fixed the Season 0 issue, no workaround needed.
-- Home icon now changes based on the color mode for more consistency with the rest of the header.
-- Added placeholder images on list items, episode items, and the Details page that will load if the image either failed to retrieve or one does not exist.
-- Added some (very) primitive responsiveness to the watchlist, just to play around with how I want to go about implementing a responsive UI.
+- Removed season 0 from the listed seasons and in the backend.
+- Did some more experimenting with styling. Mocked up a grid-based layout for list items.
+- The episode grid, watchlist, and search results grid are responsive.
+- Removed the border on episode items, rounded the edges, added a shadow, and centered the grid.
+- Adjusted some spacing.
+- Removed the dummy progress bar on the watchlist.
+- Completely removed all CSS/SCSS files. All styling is now done inline with Chakra.
+- Progress bars are now animated.
+- The home button, watchlist button, and color mode button all have tooltips now.
+- Selected season now defaults to 1.
 
 ---
 
@@ -21,8 +27,8 @@ NOTE: After doing some digging on the abnormal behavior of shows (Season 0 of ev
 
 Well, to be honest, there's a lot I want to do. I'm not sure how much of it is feasible, but there are a few things that I need to do as opposed to what I want to do. Here's a few:
 
-- Consider removing Season 0 entirely, thus avoiding the need for workarounds and preventing it from skewing runtimes and progress bars
 - Add runtime calculations
+- Filter out searches that are undefined
 - Include screenshots and documentation on how to use the tool
 - Add mobile support
 - Add pagination for the search page

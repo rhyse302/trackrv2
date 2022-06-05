@@ -28,8 +28,8 @@ const EpisodeItem = (props) => {
   }
 
   return (
-    <Box w='500px' minH='281px' borderRadius={4} bg={color} borderWidth={4} borderColor='black'>
-      <Image src={props.item.still_path !== null ? apiConfig.w500Image(props.item.still_path) : placeholder} alt={props.item.name} bgClip='border-box' opacity={watched ? '75%' : '100%'} />
+    <Box w='500px' minH='281px' borderRadius='lg' bg={color} borderColor='black' shadow={useColorModeValue('2xl', 'dark-lg')}>
+      <Image roundedTop='lg' src={props.item.still_path !== null ? apiConfig.w500Image(props.item.still_path) : placeholder} alt={props.item.name} bgClip='border-box' opacity={watched ? '75%' : '100%'} />
       {props.onList && <Checkbox isChecked={watched} onChange={(e) => { toggleEpisode(e.target.checked) }}>{watched ? 'Watched!' : 'Mark Watched'}</Checkbox>}
       <Text>{props.item.episode_number}: {props.item.name}</Text>
       <Text>{props.item.runtime} minutes</Text>

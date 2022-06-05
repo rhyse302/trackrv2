@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Box, Heading, VStack, Progress } from '@chakra-ui/react'
+import { Box, Flex, Heading, SimpleGrid } from '@chakra-ui/react'
 
 import ListItem from '../components/listitem/ListItem'
 import { getWatchList } from '../scripts/ListManager'
@@ -22,21 +22,25 @@ const Watchlist = () => {
 	}, [items.length])
 
 	return (
-		<Box>
+		<Flex direction='column'>
 			<Helmet>
 				<title>My Watchlist</title>
 			</Helmet>
-			<Progress value={80} mx={4} borderRadius={4} hasStripe={true} />
-			<VStack gap={4}>
-				<Heading mt={4} alignSelf='center'>My Watchlist</Heading>
+			<Box gap={4}>
+				<Heading my={4} align='center'>My Watchlist</Heading>
 				{items.length === 0 &&
 					<Heading alignSelf='center' size='md'>Looks like you don't have anything on your watchlist. Use the search bar to get started</Heading>
 				}
-				{items && items.map((item, key) => (
+				{/* {items && items.map((item, key) => (
 					<ListItem id={item[0]} category={item[1]} key={key} />
-				))}
-			</VStack>
-		</Box>
+				))} */}
+				<SimpleGrid justifyItems='center' minChildWidth='500px' spacing={4}>
+					{items && items.map((item, key) => (
+						<ListItem id={item[0]} category={item[1]} key={key} />
+					))}
+				</SimpleGrid>
+			</Box>
+		</Flex>
 	)
 }
 
