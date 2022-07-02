@@ -11,7 +11,6 @@ import SearchResults from "./pages/SearchResults";
 
 function App() {
   return (
-    <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -22,7 +21,6 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </div>
   );
 }
 

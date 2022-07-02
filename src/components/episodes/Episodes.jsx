@@ -27,7 +27,7 @@ const Episodes = (props) => {
 			<Heading as='h2' mb={8} textDecoration='underline'>{season.name} | {season.episodes && season.episodes.length} Episodes</Heading>
 			<SimpleGrid minChildWidth='500px' spacing={4} justifyItems='center'>
 				{season.episodes && season.episodes.map((item, num) => (
-					<EpisodeItem id={props.id} item={item} season={props.season} num={num} key={num} onList={onList} />
+					<EpisodeItem id={props.id} item={item} season={props.season} num={num} key={num} open={false} onList={onList} />
 				))}
 			</SimpleGrid>
 		</Box>

@@ -10,16 +10,9 @@ NOTE: After doing some digging on the abnormal behavior of shows (Season 0 of ev
 
 ## What's New?
 
-- Removed season 0 from the listed seasons and in the backend.
-- Did some more experimenting with styling. Mocked up a grid-based layout for list items.
-- The episode grid, watchlist, and search results grid are responsive.
-- Removed the border on episode items, rounded the edges, added a shadow, and centered the grid.
-- Adjusted some spacing.
-- Removed the dummy progress bar on the watchlist.
-- Completely removed all CSS/SCSS files. All styling is now done inline with Chakra.
-- Progress bars are now animated.
-- The home button, watchlist button, and color mode button all have tooltips now.
-- Selected season now defaults to 1.
+- Added a fade in for episode items and list items.
+- Episode fade ins will cascade, whereas list items will fade in at once.
+- Started work on the info display on the details page containing things like streaming services, cast, network, language, etc.
 
 ---
 
@@ -27,7 +20,6 @@ NOTE: After doing some digging on the abnormal behavior of shows (Season 0 of ev
 
 Well, to be honest, there's a lot I want to do. I'm not sure how much of it is feasible, but there are a few things that I need to do as opposed to what I want to do. Here's a few:
 
-- Add runtime calculations
 - Filter out searches that are undefined
 - Include screenshots and documentation on how to use the tool
 - Add mobile support

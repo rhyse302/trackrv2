@@ -8,6 +8,7 @@ import tmdbAPI from '../api/tmdpApi'
 import apiConfig from '../api/apiConfig'
 import Episodes from '../components/episodes/Episodes'
 import ListButton from '../components/listbutton/ListButton'
+import InfoDisplay from '../components/infodisplay/InfoDisplay'
 import { isOnList, getTimes } from '../scripts/ListManager'
 import placeholder from '../res/NotFoundPoster.png'
 
@@ -49,11 +50,14 @@ const Details = () => {
 						</HStack>
 						<ListButton item={details} />
 					</HStack>
-					<Box px={4}>
-						<Text fontSize='lg'>{details.overview}</Text>
-						{category === 'tv' && <Text>{details.number_of_seasons} {details.number_of_seasons > 1 ? 'Seasons' : 'Season'} | {details.number_of_episodes} Episodes</Text>}
-						{category === 'tv' && isOnList(details.id) && <Text>{times[0]} minutes watched | {times[1] - times[0]} minutes remaining</Text>}
-					</Box>
+					<HStack align='flex-start'>
+						<Box px={4}>
+							<Text fontSize='lg'>{details.overview}</Text>
+							{category === 'tv' && <Text>{details.number_of_seasons} {details.number_of_seasons > 1 ? 'Seasons' : 'Season'} | {details.number_of_episodes} Episodes</Text>}
+							{category === 'tv' && isOnList(details.id) && <Text>{times[0]} minutes watched | {times[1] - times[0]} minutes remaining</Text>}
+						</Box>
+						<InfoDisplay item={details} />
+					</HStack>
 				</VStack>
 			</HStack>
 
